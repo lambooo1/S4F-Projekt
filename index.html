@@ -5,20 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" href = "styles.css"> 
 </head>
 <body>
     <div class="card">
         <div class="search">
-        <input type="text" placeholder="Search..." spellcheck="false">
-        <button>Search</button>
+            <input type="text" placeholder="location..." spellcheck="false">
+            <button>search</button>
+            <!-- <img src="./images/searchIcon.jpg"> -->
         </div>
-            
         <div class="weather">
-        <h1 class="temp">22c</h1>
-        <h2 class="city">London</h2>
+            <img src="https://openweathermap.org/img/w/01d.png" alt="weather-icon" class="weather-icon">
+            <h1 class="temp">22c</h1>
+            <h2 class="city">London</h2>
+            <div>
+                <!--<img src="./images/png-transparent-moisture-humidity-system-computer-icons-air-conditioning-heat-stroke-thumbnail.png" alt=""> -->
+            </div>
         </div>
     </div>
-    
+
     <script>
         const API_Key = 'd69db2ff6fc475d8e6f14feccbbbcf12' 
         const url = 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=d69db2ff6fc475d8e6f14feccbbbcf12'

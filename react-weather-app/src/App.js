@@ -57,7 +57,7 @@ function App() {
               value={getState}
             />
           </div>
-          <button className="btn btn-primary mt-2" onClick={submitHandler}>
+          <button className="bn" onClick={submitHandler}>
             Search
           </button>
         </div>
@@ -112,7 +112,7 @@ function App() {
               </div>
             </div>
           ) : (
-            <h1>Loa</h1>
+            <h1>Loading</h1>
           )}
         </div>
       </div>

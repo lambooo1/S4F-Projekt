@@ -10,19 +10,35 @@ function App() {
   const [getState, setGetState] = useState('swiss');
   const [state, setState] = useState('swiss');
 
+  //const lon = apiData.coord?.lon;
+  //const lat = apiData.coord?.lat;
+
   const Raw_API_KEY = process.env.REACT_APP_API_KEY;
   //removes the quotes from the api key
   const API_KEY = Raw_API_KEY.replace(/['"]+/g, '');
 
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${API_KEY}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${API_KEY}`; 
 
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
-      .then((data) => setApiData(data));
-      
+      .then((data) => setApiData(data))
+      .catch((error) => console.log(error));
   }, [apiUrl]);
 
+  //let apiForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}.34&lon=${lon}&appid=${API_KEY}`;
+  /*
+  async function getForecast() {
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${API_KEY}`;
+
+    const response = await fetch(apiForecast);
+    const Dailydata = await response.json();
+
+    let apiForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}.34&lon=${lon}&appid=${API_KEY}`;
+    const response2 = await fetch(apiForecast);
+    const Hourlydata = await response2.json();
+  }
+  */
   //functions 
   const inputHandler = (event) => {
     setGetState(event.target.value);
@@ -56,7 +72,7 @@ function App() {
               onChange={inputHandler}
               value={getState}
             />
-          </div>
+          </div>        
           <button className="bn" onClick={submitHandler}>
             Search
           </button>
@@ -112,7 +128,22 @@ function App() {
               </div>
             </div>
           ) : (
-            <h1>Loading</h1>
+            //https://uiverse.io/zanina-yassine/weak-bobcat-68
+          /*
+            <div class="container">
+              <div class="cloud front">
+                <span class="left-front"></span>
+                <span class="right-front"></span>
+              </div>
+              <span class="sun sunshine"></span>
+              <span class="sun"></span>
+              <div class="cloud back">
+                <span class="left-back"></span>
+                <span class="right-back"></span>
+              </div>
+            </div>
+            */
+           <h1>Loading</h1>
           )}
         </div>
       </div>
